@@ -9,9 +9,32 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Search Timetable</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>FPT University</h1>
+        <input type="date">
+        <table>
+            <tr>
+                <th> Slot </th>
+                <th> Course </th>
+                <th> Class </th> 
+                <th>  </th> 
+            </tr>
+
+            <c:forEach items="${requestScope.emps}" var="e">
+                <tr>
+                    <td>
+                        ${Slot}
+                    </td>
+                    <td>
+                        ${CourseName}
+                    </td>
+                    <td>
+                        ${Class}
+                    </td>
+                </tr>
+            </c:forEach>
+        </table>
     </body>
 </html>
