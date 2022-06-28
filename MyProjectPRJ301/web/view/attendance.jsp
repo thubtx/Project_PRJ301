@@ -13,6 +13,26 @@
     </head>
     <body>
         <h1>FPT University</h1>
-        
+        <table>
+            <tr>
+                <th> ID </th>
+                <th> Name </th>
+                <th> Class </th>
+            </tr>
+
+            <c:forEach items="${requestScope.students}" var="s">
+                <tr>
+                    <td>
+                        ${s.Id}
+                    </td>
+                    <td>
+                        ${s.Name}
+                    </td>
+                    <td>
+                        ${s.Class}
+                    </td>
+                </tr>
+            </c:forEach>
+        </table>
     </body>
 </html>
