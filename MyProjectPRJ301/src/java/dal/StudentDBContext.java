@@ -22,17 +22,17 @@ public class StudentDBContext extends DBContext<Student> {
     public ArrayList<Student> list() {
         ArrayList<Student> students = new ArrayList<>();
         try {
-            String sql = "SELECT [StudentID]\n"
-                    + "      ,[StudentName]\n"
-                    + "      ,[Class]\n"
+            String sql = "SELECT [sid]\n"
+                    + "      ,[sname]\n"
+                    + "      ,[class]\n"
                     + "  FROM [[Student]";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
             while(rs.next()){
                 Student s = new Student();
-                s.setId(rs.getString("StudentID"));
-                s.setName(rs.getString("StudentName"));
-                s.setClass(rs.getString("Class"));
+                s.setId(rs.getInt("sid"));
+                s.setName(rs.getString("sname"));
+                s.setClass(rs.getString("class"));
                 students.add(s);
             }
         } catch (SQLException ex) {

@@ -54,8 +54,11 @@ public class AttendanceController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException { 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
+//        StudentDBContext dbStudent = new StudentDBContext();
+//        ArrayList<Student> students = dbStudent.list();
+//        request.setAttribute("Student", students);
+//        request.getRequestDispatcher("../view/attendance.jsp").forward(request, response);
         StudentDBContext dbStudent = new StudentDBContext();
         ArrayList<Student> students = dbStudent.list();
         request.setAttribute("Student", students);

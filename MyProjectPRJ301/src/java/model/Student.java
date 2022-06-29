@@ -9,24 +9,24 @@ package model;
  * @author Admin
  */
 public class Student {
-    private String Id;
-    private String Name;
+    private int id;
+    private String name;
     private String Class;
 
-    public String getId() {
-        return Id;
+    public int getId() {
+        return id;
     }
 
-    public void setId(String Id) {
-        this.Id = Id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getClass(String Class) {
@@ -36,7 +36,5 @@ public class Student {
     public void setClass(String Class) {
         this.Class = Class;
     }
-
-    
     
 }
