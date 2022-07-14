@@ -5,12 +5,15 @@
 
 package controller;
 
+import dal.TimetableDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import model.Timetable;
 
 /**
  *
@@ -53,7 +56,10 @@ public class TimetableController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
+        TimetableDBContext tdb = new TimetableDBContext();
+        ArrayList<Timetable> timetables = tdb.list();
+        request.setAttribute("timetables", timetables);
+        request.getRequestDispatcher("../view/timetable.jsp").forward(request, response);
     } 
 
     /** 
